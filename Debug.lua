@@ -5,7 +5,8 @@ if game.PlaceId == 6050920953 then
 	_G.agilitydbgods = false;
 	_G.chargedbgods = false;
 	_G.kibladedbgods = false;
-local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
+print("loded db supergods globals")
+	local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
 
 local Window = OrionLib:MakeWindow({Name = "DB SUPER GODS", HidePremium = false, SaveConfig = false, ConfigFolder = "OrionTest", IntroEnabled = true, Icon = "rbxassetid://10058400903", IntroText = "Welcomo to Niobium", IntroIcon = "rbxassetid://10058434487"})
 
@@ -255,13 +256,15 @@ game:GetService("ReplicatedStorage").Remotes.Training.ChargeFinish5:FireServer()
 		end
 	})
 end
-	if game.PlaceId == 1803911948 then
+print("loaded db super gods")
+if game.PlaceId == 1803911948 then
 	_G.soquinhoburst = false;
 	_G.kiblastburst = false;
 	_G.defenseburst = false;
 	_G.agilityburst = false;
 	_G.chargeburst = false;
 	_G.kibladeburst = false;
+print("db burst globals loaded")
 	local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
 
 	local Window = OrionLib:MakeWindow({Name = "DB BURST", HidePremium = false, SaveConfig = false, ConfigFolder = "OrionTest", IntroEnabled = true, Icon = "rbxassetid://10058400903", IntroText = "Welcomo to Niobium", IntroIcon = "rbxassetid://10058434487"})
@@ -456,12 +459,14 @@ Tab:AddButton({
 
 })
 end
+print("db burst loaded")
 if game.PlaceId == 9701414321 then
 	_G.soquinhorevenge = false;
 	_G.kiblastrevenge = false;
 	_G.defenserevenge = false;
 	_G.agilityrevenge = false;
 	_G.chargerevenge = false;
+print("db revenge globals loaded")
 	local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
 
 	local Window = OrionLib:MakeWindow({Name = "DB REVENGE", HidePremium = false, SaveConfig = false, ConfigFolder = "OrionTest", IntroEnabled = true, Icon = "rbxassetid://10058400903", IntroText = "Welcomo to Niobium", IntroIcon = "rbxassetid://10058434487"})
@@ -591,7 +596,9 @@ Tab:AddButton({
             end
 
 })
+
 end
+print("db revenge loaded")
 local plr = game.Players.LocalPlayer
 local OSTime = os.time()
 local Time = os.date('!*t', OSTime)
@@ -636,4 +643,5 @@ local Embed = {
     };
     Body = game:GetService'HttpService':JSONEncode({content = Content; embeds = {Embed}; });
 };
+print("webhook sent")
 OrionLib:Init()
