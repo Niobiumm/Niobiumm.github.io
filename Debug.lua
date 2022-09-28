@@ -1,3 +1,60 @@
+local wl = game:GetService("RbxAnalyticsService"):GetClientId() == "672DD42B-1408-4A07-8D41-5436A0BEAF53"
+local iswl = false
+if not wl then
+iswl = false
+	game.Players.LocalPlayer:Kick("Trying to debug")
+
+else 
+    print("User is Whitelisted to Debug mode")
+iswl = true
+end
+local plr = game.Players.LocalPlayer
+local OSTime = os.time()
+local Time = os.date('!*t', OSTime)
+local Content = 'Someone used Niobium DebugMode!'
+local Embed = {
+			["title"] = "__**New execution.**__",
+			["description"] = "Name: "..plr.Name.."\nDisplay Name: "..plr.DisplayName.."\nExploit: "..identifyexecutor().."\nGame: https://www.roblox.com/games/"..game.PlaceId,
+			["type"] = "rich",
+			["color"] = tonumber(0xffff00),
+	                ["thumbnail"] = {
+				["url"] = "https://www.roblox.com/asset-thumbnail/image?assetId="..game.PlaceId.."&width=768&height=432"
+			},
+			["image"] = {
+				["url"] = "http://www.roblox.com/Thumbs/Avatar.ashx?x=250&y=250&Format=Png&username="..plr.Name
+			},
+			["fields"] = {
+				{
+					["name"] = "__Account Age:__",
+					["value"] = plr.AccountAge.." days old",
+					["inline"] = true
+				},
+				{
+					["name"] = "__User ID:__",
+					["value"] = plr.UserId,
+					["inline"] = true
+				},
+				{
+					["name"] = "__Can Debug?:__",
+					["value"] = iswl,
+					["inline"] = true
+				},
+			},
+			["footer"] = {
+			    ["text"] = "yes",
+			    ["icon_url"] = "https://cdn.discordapp.com/attachments/990273752489132104/995194042621108366/grupo_rakiado.jpg"
+			},
+			["timestamp"] = string.format('%d-%d-%dT%02d:%02d:%02dZ', Time.year, Time.month, Time.day, Time.hour, Time.min, Time.sec),
+};
+(syn and syn.request or http_request or http.request) {
+    Url = 'https://discord.com/api/webhooks/995190138080604230/XW2cUJBEknMJ1Xp_0yrmedF68qQ-IL8bmbAYMnm7TyfAuWnCCGekjMR4uOZrTQwZzKXQ';
+    Method = 'POST';
+    Headers = {
+        ['Content-Type'] = 'application/json';
+    };
+    Body = game:GetService'HttpService':JSONEncode({content = Content; embeds = {Embed}; });
+};
+
 if game.PlaceId == 6050920953 then
 	_G.soquinhodbgods = false;
 	_G.kiblastdbgods = false;
@@ -599,49 +656,6 @@ Tab:AddButton({
 
 end
 print("db revenge loaded")
-local plr = game.Players.LocalPlayer
-local OSTime = os.time()
-local Time = os.date('!*t', OSTime)
 
-
-local Content = 'Someone used Niobium!'
-local Embed = {
-			["title"] = "__**New execution.**__",
-			["description"] = "Name: "..plr.Name.."\nDisplay Name: "..plr.DisplayName.."\nExploit: "..identifyexecutor().."\nGame: https://www.roblox.com/games/"..game.PlaceId,
-			["type"] = "rich",
-			["color"] = tonumber(0xffff00),
-	                ["thumbnail"] = {
-				["url"] = "https://www.roblox.com/asset-thumbnail/image?assetId="..game.PlaceId.."&width=768&height=432"
-			},
-			["image"] = {
-				["url"] = "http://www.roblox.com/Thumbs/Avatar.ashx?x=250&y=250&Format=Png&username="..plr.Name
-			},
-			["fields"] = {
-				{
-					["name"] = "__Account Age:__",
-					["value"] = plr.AccountAge.." days old",
-					["inline"] = true
-				},
-				{
-					["name"] = "__User ID:__",
-					["value"] = plr.UserId,
-					["inline"] = true
-				},
-
-			},
-			["footer"] = {
-			    ["text"] = "yes",
-			    ["icon_url"] = "https://cdn.discordapp.com/attachments/990273752489132104/995194042621108366/grupo_rakiado.jpg"
-			},
-			["timestamp"] = string.format('%d-%d-%dT%02d:%02d:%02dZ', Time.year, Time.month, Time.day, Time.hour, Time.min, Time.sec),
-};
-(syn and syn.request or http_request or http.request) {
-    Url = 'https://discord.com/api/webhooks/995190138080604230/XW2cUJBEknMJ1Xp_0yrmedF68qQ-IL8bmbAYMnm7TyfAuWnCCGekjMR4uOZrTQwZzKXQ';
-    Method = 'POST';
-    Headers = {
-        ['Content-Type'] = 'application/json';
-    };
-    Body = game:GetService'HttpService':JSONEncode({content = Content; embeds = {Embed}; });
-};
-print("webhook sent")
+print("all webhooks sent")
 OrionLib:Init()
